@@ -1,8 +1,9 @@
 // http://www.w3.org/TR/CSS21/grammar.html
 // https://github.com/visionmedia/css-parse/pull/49#issuecomment-30088027
-var commentre = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
 
 function parseCSS(css, options){
+
+  var commentre = /\/\*[^*]*\*+([^/*][^*]*\*+)*\//g;
 
   options = options || {};
   options.position = options.position === false ? false : true;
@@ -544,7 +545,7 @@ function parseCSS(css, options){
 function parseInlineCSS(str)
 {
   var parsed;
-  
+
   try {
     parsed = parseCSS('dummy{' + str + '}');
   }
